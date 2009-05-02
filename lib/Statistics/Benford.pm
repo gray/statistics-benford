@@ -4,7 +4,7 @@ use strict;
 use warnings;
 use List::Util qw(sum);
 
-our $VERSION = '0.06';
+our $VERSION = '0.07';
 
 sub new {
     my ($class, $base, $n, $len) = @_;
