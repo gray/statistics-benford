@@ -206,7 +206,7 @@ negative and positive values separately.
 =head1 REQUESTS AND BUGS
 
 Please report any bugs or feature requests to
-L<http://rt.cpan.org/NoAuth/ReportBug.html?Queue=Statistics-Benford>. I will
+L<http://rt.cpan.org/Public/Bug/Report?Queue=Statistics-Benford>. I will
 be notified, and then you'll automatically be notified of progress on your bug
 as I make changes.
 
@@ -220,6 +220,10 @@ You can also look for information at:
 
 =over
 
+=item * GitHub Source Repository
+
+L<http://github.com/gray/statistics-benford>
+
 =item * AnnoCPAN: Annotated CPAN documentation
 
 L<http://annocpan.org/dist/Statistics-Benford>
@@ -230,7 +234,7 @@ L<http://cpanratings.perl.org/d/Statistics-Benford>
 
 =item * RT: CPAN's request tracker
 
-L<http://rt.cpan.org/NoAuth/Bugs.html?Dist=Statistics-Benford>
+L<http://rt.cpan.org/Public/Dist/Display.html?Name=Statistics-Benford>
 
 =item * Search CPAN
 
