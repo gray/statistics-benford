@@ -1,5 +1,11 @@
 Revision history for Statistics-Benford
 
+0.08  Sun Sep 6 07:37:28 UTC 2009
+    - Used named parameters for easier maintenance.
+    - Moved author tests into separate directory.
+    - Added perl critic test.
+    - Added repository link to documentation.
+
 0.07  Sat May 2 22:51:42 UTC 2009
     - Prevented division by zero error.
 

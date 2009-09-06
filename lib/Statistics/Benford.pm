@@ -4,7 +4,7 @@ use strict;
 use warnings;
 use List::Util qw(sum);
 
-our $VERSION = '0.07';
+our $VERSION = '0.08';
 $VERSION = eval $VERSION;
 
 use constant _BASE => 0;
