@@ -5,6 +5,12 @@ use warnings;
 use List::Util qw(sum);
 
 our $VERSION = '0.07';
+$VERSION = eval $VERSION;
+
+use constant _BASE => 0;
+use constant _N    => 1;
+use constant _LEN  => 2;
+use constant _DIST => 3;
 
 sub new {
     my ($class, $base, $n, $len) = @_;
@@ -37,7 +43,7 @@ sub new {
 }
 
 sub distribution {
-    return %{ $_[0]->[3] };
+    return %{ $_[0]->[_DIST] };
 }
 
 *dist = \&distribution;
@@ -49,7 +55,7 @@ sub difference {
     my $count = sum values %freq;
     return 0 unless $count;
 
-    while (my ($num, $percent) = each %{ $self->[3] }) {
+    while (my ($num, $percent) = each %{ $self->[_DIST] }) {
         my $delta = ($freq{$num} ? $freq{$num} / $count : 0) - $percent;
         $diff += abs($diff{$num} = $delta);
     }
@@ -66,7 +72,7 @@ sub signif {
     my $count = sum values %freq;
     return 0 unless $count;
 
-    while (my ($num, $percent) = each %{ $self->[3] }) {
+    while (my ($num, $percent) = each %{ $self->[_DIST] }) {
         my $delta = ($freq{$num} ? $freq{$num} / $count : 0) - $percent;
         my $fix = abs $delta > (1 / (2 * $count)) ? (1 / (2 * $count)) : 0;
         my $z = (abs($delta) - $fix) /
@@ -74,7 +80,7 @@ sub signif {
         $diff += $diff{ $num } = $z ;
     }
 
-    return wantarray ? %diff : $diff / keys %{ $self->[3] };
+    return wantarray ? %diff : $diff / keys %{ $self->[_DIST] };
 }
 
 *z = \&signif;
